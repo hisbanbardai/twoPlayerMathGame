@@ -13,7 +13,8 @@ class Game
     current_player = @players[@current_player_index]
 
     if current_player.num_of_lives < 0
-      end_game
+      @current_player_index ^= 1
+      end_game(@current_player_index)
     else
       game_question = question.generate_question
       puts "Player #{@current_player_index}: #{game_question}"
@@ -33,14 +34,18 @@ class Game
     play_round
   end
 
-  def end_game
+  def end_game(player_index)
+    winner_player = @players[player_index]
+    puts "Player #{player_index + 1} wins with a score of #{winner_player.num_of_lives}/3"
+    puts "----- GAME OVER -----"
+    puts "Good bye!"
   end
 
   def check_player_answer(player, answer)
     if question.correct_answer(answer)
-      puts "Player #{@current_player_index}: YES! You are correct."
+      puts "Player #{@current_player_index + 1}: YES! You are correct."
     else
-      puts "Player #{@current_player_index}: Seriously? No!"
+      puts "Player #{@current_player_index + 1}: Seriously? No!"
       player.reduce_lives
     end
   end
