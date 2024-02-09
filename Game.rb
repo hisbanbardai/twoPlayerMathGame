@@ -48,6 +48,7 @@ class Game
       puts "Player #{@current_player_index + 1}: Seriously? No!"
       player.reduce_lives
     end
+    display_score
   end
 
   def display_score()
