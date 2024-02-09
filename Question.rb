@@ -5,4 +5,7 @@ class Question
     @correct_answer = @num_1 + @num_2
   end
 
+  def generate_question()
+    puts "What does #{num_1} + #{num_2} equal?"
+  end
 end
