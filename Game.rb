@@ -25,4 +25,7 @@ class Game
 
   def end_game
   end
+
+  def check_player_answer(player, answer)
+  end
 end
