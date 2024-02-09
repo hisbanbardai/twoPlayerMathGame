@@ -12,4 +12,10 @@ class Player
     puts question
     player_answer = gets.chomp
   end
+
+  def reduce_lives()
+    if @num_of_lives > 0 
+      @num_of_lives -= 1
+    end
+  end
 end
