@@ -18,6 +18,8 @@ class Game
       game_question = question.generate_question
       puts "Player #{@current_player_index}: #{game_question}"
       player_answer = current_player.answer_question(game_question)
+      check_player_answer(current_player, player_answer)
+    end
   end
 
   def next_turn
@@ -27,5 +29,11 @@ class Game
   end
 
   def check_player_answer(player, answer)
+    if question.correct_answer(answer)
+      puts "Player #{@current_player_index}: YES! You are correct."
+    else
+      puts "Player #{@current_player_index}: Seriously? No!"
+      player.reduce_lives
+    end
   end
 end
