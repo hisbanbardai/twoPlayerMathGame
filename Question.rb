@@ -6,10 +6,10 @@ class Question
   end
 
   def generate_question()
-    puts "What does #{@num_1} + #{@num_2} equal?"
+    "What does #{@num_1} + #{@num_2} equal?"
   end
 
-  def correct_answer?(player_answer)
+  def is_answer_correct?(player_answer)
     @correct_answer == player_answer.to_i
   end
 end

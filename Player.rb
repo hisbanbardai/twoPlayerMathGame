@@ -9,7 +9,7 @@ class Player
   end
 
   def answer_question(question)
-    puts question
+    print "> "
     player_answer = gets.chomp
     return player_answer
   end
