@@ -19,10 +19,18 @@ class Game
       puts "Player #{@current_player_index}: #{game_question}"
       player_answer = current_player.answer_question(game_question)
       check_player_answer(current_player, player_answer)
+      next_turn
     end
   end
 
   def next_turn
+    if @current_player == 0
+      @current_player = @current_player + 1
+    else
+      @current_player = @current_player - 1
+    end
+
+    play_round
   end
 
   def end_game
