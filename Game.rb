@@ -24,10 +24,10 @@ class Game
   end
 
   def next_turn
-    if @current_player == 0
-      @current_player = @current_player + 1
+    if @current_player_index == 0
+      @current_player_index = @current_player_index + 1
     else
-      @current_player = @current_player - 1
+      @current_player_index = @current_player_index - 1
     end
 
     play_round
@@ -43,5 +43,10 @@ class Game
       puts "Player #{@current_player_index}: Seriously? No!"
       player.reduce_lives
     end
+  end
+
+  def display_score()
+    puts "P1: #{@players[0].num_of_lives}/3 vs P2: #{@players[1].num_of_lives}/3"
+    puts "----- NEW TURN -----"
   end
 end
