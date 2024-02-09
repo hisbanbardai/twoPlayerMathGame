@@ -7,4 +7,9 @@ class Player
 
   attr_accessor:name
   attr_reader :num_of_lives
+
+  def answer_question(question)
+    puts question
+    player_answer = gets.chomp
+  end
 end
